@@ -1,0 +1,23 @@
+<% include header %>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="row clearfix">
+                <div class="col-md-1 column">
+                </div>
+                <div class="col-md-10 column">
+                    <ul class="archive">
+                        <% posts.forEach(function(post,index){ %>
+                        <li><%= post.time.day %></li>
+                        <li><a href="/u/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>"><%= post.title %></a></li>
+                        <% }) %>
+                    </ul>
+                </div>
+                <div class="col-md-1 column">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include footer %>

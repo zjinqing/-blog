@@ -1,0 +1,39 @@
+
+<div class="container" style="height: 600px;">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="row clearfix">
+                <div class="col-md-1 column">
+                </div>
+                <div class="col-md-10 column">
+                    <!--留言的展示-->
+                    <% post.comments.forEach(function(comment){ %>
+                    <p>
+                        <%= comment.name %>
+                        <span class="info"> 回复于 <%= comment.time %></span>
+                    </p>
+                    <p><%- comment.content %></p>
+                    <% })%>
+                    <!--添加留言的表单-->
+                    <% if (user) { %>
+                    <form method="post" action="/comment/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>">
+                        发布人:<%= user.name %>
+                        <input type="hidden" name="name" value="<%= user.name %>"/><br><br>
+                        <textarea name="content" rows="5" cols="80"></textarea><br>
+                        <input type="submit" value="留言" />
+                    </form>
+                    <% }else{ %>
+                    <form method="post">
+
+                        <textarea name="content" rows="5" cols="80" id="tb"></textarea> <br>
+                        回应请先<a href="/login">登录</a>或<a href="/reg">注册</a>
+                    </form>
+                    <% } %>
+                </div>
+                <div class="col-md-1 column">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

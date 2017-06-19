@@ -1,0 +1,35 @@
+<%include header %>
+<link rel="stylesheet" href="/stylesheets/reglogin.css">
+<script src="/js/reglogin.js"></script>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="row clearfix">
+                <div class="col-md-4 column">
+                </div>
+                <div class="col-md-4 column">
+                    <div class="wrap flex-c-c col-xs-12 col-sm-12 col-lg-6">
+                        <form action="" method="post" class="flex-c-c animated rubberBand">
+                            <ul class="select__list">
+                                <!--<li id="js-usr-rtn" class="select__label">Sign in</li>-->
+                                <li id="js-usr-new" class="select__label select__label--active animated bounceInDown">Sign up</li>
+                                <!--<li id="js-usr-rst" class="select__label">Reset</li>-->
+                            </ul>
+                               <input style="width: 250px;" type="text" placeholder="用户" class="ui-field" id="js-field__email"  name="name"  />
+                               <input style="width: 250px;" type="password" placeholder="密码" class="ui-field" id="js-field__pass" name="password"/>
+                               <input style="width: 250px;" type="password" placeholder="确认密码" class="ui-field" id="js-field__r-pass" name="password-repeat"/>
+                               <input style="width: 250px;" type="email" placeholder="邮箱" class="ui-field" id="js-field__email"name="email"/>
+                               <input style="width: 250px;margin-bottom: 20px;" id="js-btn" class="ui-button --usr-new"  type="submit" ></input>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-4 column">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%include footer %>

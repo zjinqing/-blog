@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>我的首页</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+<!--搜索样式-->
+    <link rel="stylesheet" href="/stylesheets/sousuo1.css">
+    <link rel="stylesheet" href="/stylesheets/sousuo2.css">
+    <link rel="stylesheet" href="/stylesheets/sousuo3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!--dongtu样式-->
+    <link rel="stylesheet" media="screen" href="/stylesheets/dongtu.css"/>
+    <script src="/js/dongtu.js"></script>
+    <!--动画库-->
+    <link rel="stylesheet" href="/stylesheets/animate.min.css">
+    <!--bootstrap-->
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--引入模板样式-->
+    <link rel="stylesheet" media="screen" href="/stylesheets/css/superfish.css" />
+    <link rel="stylesheet" href="/stylesheets/css/nivo-slider.css" media="all" />
+    <link rel="stylesheet" href="/stylesheets/css/tweet.css" media="all" />
+    <link rel="stylesheet" href="/stylesheets/css/style.css" />
+    <link rel="stylesheet" media="all" href="/stylesheets/css/lessframework.css" />
+    <!--<script src="/js/modernizr-2.5.3.min.js"></script>-->
+</head>
+<body>
+
+<div class="wrapper cf" style="margin-top: 50px">
+<header>
+    <!-- social-bar -->
+    <div id="social-bar-holder">
+        <ul id="social-bar" class="cf">
+            <li class="dribbble"><a href="javascript:;" title="Dribbble"></a></li>
+            <li class="facebook"><a href="javascript:;" title="Facebook"></a></li>
+            <li class="forrst"><a href="javascript:;" title="forrst"></a></li>
+            <li class="googleplus"><a href="javascript:;" title="googleplus"></a></li>
+            <li class="twitter"><a href="javascript:;" title="twitter"></a></li>
+        </ul>
+    </div>
+    <div class="cf"> </div>
+    <!-- ENDS social-bar -->
+
+    <div id="logo" class="cf" style="height: 130px;">
+        <div class="container1">
+            <div class="me">
+                <div class="hair"></div>
+                <div class="clothes">
+                    <div class="jumper"></div>
+                </div>
+                <div class="neck"></div>
+                <div class="head">
+                    <div class="bangs"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- nav -->
+    <nav class="cf" style="z-index:2; color: black">
+        <ul id="nav" class="sf-menu">
+            <li><a href="/"><span> 首页</span></a></li>
+            <li><a href="/resume"><span>个人简历</span></a>
+            <li><a href="/tags"><span>标签</span></a>
+                <% if (user) { %>
+            <li><a href="/upload"><span>上传</span></a>
+            <li><a href="/post"><span>发布</span></a>
+            <li><a href="/archive"><span>存档</span></a>
+            <li><a href="/logout"><span>退出</span></a>
+                <%  } else { %>
+            <li><a href="/login"><span>登陆</span></a></li>
+            <li><a href="/reg"><span>注册</span></a></li>
+            <% } %>
+        </ul>
+        <div id="combo-holder"></div>
+
+    </span>
+    </nav>
+    <!-- ends nav -->
+</header>
+<article>
+ <center>
+     <% if (success) { %>
+     <div><%= success %></div>
+     <% } %>
+     <% if (error) { %>
+     <div><%= error %></div>
+     <% } %>
+ </center>

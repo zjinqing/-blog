@@ -1,0 +1,112 @@
+<% include header %>
+<!--2048样式-->
+<link rel="stylesheet" href="/stylesheets/2048.css">
+
+<div role="main" id="main" class="cf">
+    <!-- SLIDER -->
+    <div class="slider-wrapper theme-halftone">
+        <div id="slider" class="nivoSlider">
+            <img src="/images/img/dummies/slides/01.jpg" alt=""/>
+            <img src="/images/img/dummies/slides/02.jpg" alt=""/>
+            <img src="/images/img/dummies/slides/03.jpg" alt=""/>
+        </div>
+        <div class="slider-left"></div>
+        <div class="slider-right"></div>
+    </div>
+    <!-- ENDS SLIDER -->
+    <!-- headline -->
+    <!-- ENDS headline -->
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <div class="row clearfix">
+                    <div class="col-md-1 column">
+                    </div>
+                    <div class="col-sm-8 col-md-7 col-lg-6 column " style="border-right: 1px solid #A8C8CA">
+                        <% posts.forEach(function (post, index) { %>
+                        <p>
+                        <h2 class="animated bounceInLeft"><a
+                                    href="/u/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>"><%= post.title %></a>
+                        </h2></p>
+                        <p class="info">
+                            发布作者：<a href="/u/<%= post.name %>"><%= post.name %></a> |
+                            发布日期：<%= post.time.minute %> |
+                            文章标签：
+                            <% post.tags.forEach(function (tag, index) { %>
+                            <% if (tag) { %>
+                            <a href="/tags/<%= tag %>"><%= tag %></a>
+                            <% } %>
+                            <% }) %>
+                        </p>
+                        <p><%- post.post %></p>
+                        <p class="info nav-tabs ">阅读：<%= post.pv %> | 评论：<%= post.comments.length %></p>
+                        <% }) %>
+
+                    </div>
+
+                    <div class="col-sm-4 col-md-3 col-lg-3 column">
+                        <!--新增搜索功能-->
+                        <div class="search d7">
+                            <form action="/search" method="get">
+                                <input class="search" type="text" name="keyword" placeholder="搜索从这里开始...">
+                                <button type="submit"></button>
+                            </form>
+                            </center>
+                        </div>
+
+                        <!--<form action="/search" method="get">-->
+                        <!--<input class="search" type="text" placeholder="SEARCH" name="keyword">-->
+                        <!--</form>-->
+                        <!--<% posts.forEach(function(tag, index){ %>-->
+                        <!--<span><a class="tag" href="/tags/<%= tag %>"><%= tag %></a></span>-->
+                        <!--<% }) %>-->
+                    </div>
+
+                </div>
+                <div class="col-sm-11 col-md-12 col-lg-10">
+                    <div class="pull-right btn btn-success "
+                         style="margin-right: 30px;border:1px solid #A8C8CA;background-color: #A8C8CA">
+                        <%- include paging %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- featured -->
+    <ul class="feature cf">
+        <li>
+            <a href="/" class="thumb">
+                <img src="/images/img/dummies/t1.jpg" alt="Thumbnail"/>
+                <div class="img-overlay"><i class="icon-plus-sign"></i></div>
+                <div class="date"><span class="m">6&6</span><span class="d"> z</span></div>
+            </a>
+            <a href="/" class="excerpt">还没有内容哎</a>
+            <div class="categories"><a href="#">心情</a><a href="#">心情, </a><a href="#">心情, </a></div>
+        </li>
+
+        <li>
+            <a href="/" class="thumb">
+                <img src="/images/img/dummies/t2.jpg" alt="Thumbnail"/>
+                <div class="img-overlay"><i class="icon-plus-sign"></i></div>
+                <div class="date"><span class="m">6&6</span><span class="d">j</span></div>
+            </a>
+            <a href="/" class="excerpt">还没有内容哎</a>
+            <div class="categories"><a href="#">心情, </a><a href="/">心情, </a><a href="/">心情, </a></div>
+        </li>
+
+        <li>
+            <a href="/" class="thumb">
+                <img src="/images/img/dummies/t3.jpg" alt="Thumbnail"/>
+                <div class="img-overlay"><i class="icon-plus-sign"></i></div>
+                <div class="date"><span class="m">6&6</span><span class="d">q</span></div>
+            </a>
+            <a href="single.html" class="excerpt">还没有内容哎</a>
+            <div class="categories"><a href="#">心情, </a><a href="#">心情, </a><a href="#">心情, </a></div>
+        </li>
+    </ul>
+    <!-- ENDS featured -->
+
+</div>
+<!--------------->
+<% include footer %>
+
